@@ -24,6 +24,11 @@ terraform {
   required_version = ">= 1.1.0"
 }
 
+provider "aws" {
+  region  = "us-east-1"
+  profile = "tcoyleaws"
+}
+
 variable "name_length" {
   description = "The number of words in the pet name"
   default     = "3"
