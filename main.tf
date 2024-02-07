@@ -61,7 +61,7 @@ resource "aws_instance" "Terraform" {
   key_name               = "coyleteast"
 
   tags = {
-    name        = "TF Test"
+    Name        = "TF Test"
     environment = "Dev"
   }
 }
