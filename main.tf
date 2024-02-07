@@ -4,17 +4,20 @@
 ## Terraform configuration
 
 terraform {
-  /* cloud {
+  cloud {
     organization = "tcoyleaws"
     workspaces {
       name = "learn-terraform-cloud-migrate"
     }
   }
-*/
+
   required_providers {
     random = {
       source  = "hashicorp/random"
       version = "3.3.2"
+    }
+    aws = {
+      source = "hashicorp/aws"
     }
   }
   required_version = ">= 1.1.0"
