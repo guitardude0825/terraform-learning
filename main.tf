@@ -43,7 +43,7 @@ output "pet_name" {
   value = random_pet.pet_name.id
 }
 */
-/*
+
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
   force_destroy = true
@@ -54,4 +54,3 @@ resource "aws_s3_bucket" "tom_bucket" {
   }
   
 }
-*/
