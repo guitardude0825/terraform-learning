@@ -57,10 +57,11 @@ resource "aws_s3_bucket" "tom_bucket" {
 resource "aws_instance" "Terraform" {
   ami                    = "ami-0e9107ed11be76fde"
   instance_type          = "t2.micro"
-  vpc_security_group_ids = ["SSH-Home"]
+  vpc_security_group_ids = ["sg-0fea779c1b49d5066"]
   key_name               = "coyleteast"
+
   tags = {
-    name        = "TFTest"
+    name        = "TF Test"
     environment = "Dev"
   }
 }
