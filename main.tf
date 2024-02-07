@@ -28,7 +28,7 @@ provider "aws" {
 provider "azurerm" {
   features {}
 }
-/*
+
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
   force_destroy = true
@@ -38,8 +38,7 @@ resource "aws_s3_bucket" "tom_bucket" {
     environment = "Dev"
   }
 }
-*/
-/*
+
 resource "aws_instance" "Terraform" {
   ami                    = "ami-0e9107ed11be76fde"
   instance_type          = "t2.micro"
@@ -52,13 +51,18 @@ resource "aws_instance" "Terraform" {
   }
 }
 
-output "ec2_public_ip" {
-  value = aws_instance.Terraform.public_ip
-}
-*/
-/*
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
   location = "eastus"
 }
-*/
+
+resource "azurerm_virtual_network" "tc-vnet" {
+  name                = "example-network"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = azurerm_resource_group.rg.location
+  address_space       = ["10.0.0.0/16"]
+}
+
+output "ec2_public_ip" {
+  value = aws_instance.Terraform.public_ip
+}
