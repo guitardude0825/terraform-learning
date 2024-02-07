@@ -28,7 +28,7 @@ provider "aws" {
 provider "azurerm" {
   features {}
 }
-/*
+
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
   force_destroy = true
@@ -57,7 +57,7 @@ resource "azurerm_resource_group" "rg" {
 }
 
 resource "azurerm_virtual_network" "tc-vnet" {
-  name                = "example-network"
+  name                = "coyle-vnet"
   resource_group_name = azurerm_resource_group.rg.name
   location            = azurerm_resource_group.rg.location
   address_space       = ["10.0.0.0/16"]
@@ -66,4 +66,3 @@ resource "azurerm_virtual_network" "tc-vnet" {
 output "ec2_public_ip" {
   value = aws_instance.Terraform.public_ip
 }
-*/
