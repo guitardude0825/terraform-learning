@@ -4,13 +4,13 @@
 ## Terraform configuration
 
 terraform {
-  /*cloud {
+   cloud {
     organization = "tcoyleaws"
     workspaces {
-      name = "learn-terraform-cloud-migrate"
+      name = "terraform-learning"
     }
   }
-*/
+
   required_providers {
     random = {
       source  = "hashicorp/random"
