@@ -12,10 +12,6 @@ terraform {
   }
 
   required_providers {
-    random = {
-      source  = "hashicorp/random"
-      version = "3.3.2"
-    }
     aws = {
       source  = "hashicorp/aws"
       version = "~> 3.28.0"
@@ -28,21 +24,6 @@ provider "aws" {
   region  = "us-east-1"
   profile = "tcoyleaws"
 }
-/*
-variable "name_length" {
-  description = "The number of words in the pet name"
-  default     = "3"
-}
-
-resource "random_pet" "pet_name" {
-  length    = var.name_length
-  separator = "-"
-}
-
-output "pet_name" {
-  value = random_pet.pet_name.id
-}
-*/
 
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
@@ -64,4 +45,8 @@ resource "aws_instance" "Terraform" {
     Name        = "TF Test"
     environment = "Dev"
   }
+}
+
+output "ec2_public_ip" {
+  value = aws_instance.Terraform.public_ip
 }
