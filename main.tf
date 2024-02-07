@@ -12,6 +12,10 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.28.0"
     }
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0.2"
+    }
   }
   required_version = ">= 1.1.0"
 }
@@ -19,6 +23,10 @@ terraform {
 provider "aws" {
   region  = "us-east-1"
   profile = "tcoyleaws"
+}
+
+provider "azurerm" {
+  features {}
 }
 /*
 resource "aws_s3_bucket" "tom_bucket" {
@@ -48,3 +56,7 @@ output "ec2_public_ip" {
   value = aws_instance.Terraform.public_ip
 }
 */
+resource "azurerm_resource_group" "rg" {
+  name     = "myTFResourceGroup"
+  location = "eastus"
+}
