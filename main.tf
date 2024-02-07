@@ -56,7 +56,9 @@ output "ec2_public_ip" {
   value = aws_instance.Terraform.public_ip
 }
 */
+/*
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
   location = "eastus"
 }
+*/
