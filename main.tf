@@ -28,7 +28,7 @@ provider "aws" {
   region  = "us-east-1"
   profile = "tcoyleaws"
 }
-
+/*
 variable "name_length" {
   description = "The number of words in the pet name"
   default     = "3"
@@ -42,7 +42,7 @@ resource "random_pet" "pet_name" {
 output "pet_name" {
   value = random_pet.pet_name.id
 }
-
+*/
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
   force_destroy = true
