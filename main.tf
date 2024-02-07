@@ -17,7 +17,7 @@ terraform {
       version = "3.3.2"
     }
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~> 3.28.0"
     }
   }
@@ -36,4 +36,14 @@ resource "random_pet" "pet_name" {
 
 output "pet_name" {
   value = random_pet.pet_name.id
+}
+
+resource "aws_s3_bucket" "tom_bucket" {
+  bucket        = "tcoyleawsbucket123423453"
+  force_destroy = true
+
+  tags = {
+    name        = "Tom Bucket"
+    environment = "Dev"
+  }
 }
