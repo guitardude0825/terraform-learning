@@ -4,7 +4,7 @@
 ## Terraform configuration
 
 terraform {
-   cloud {
+  cloud {
     organization = "tcoyleaws"
     workspaces {
       name = "terraform-learning"
@@ -43,6 +43,7 @@ output "pet_name" {
   value = random_pet.pet_name.id
 }
 */
+/*
 resource "aws_s3_bucket" "tom_bucket" {
   bucket        = "tcoyleawsbucket123423453"
   force_destroy = true
@@ -51,4 +52,6 @@ resource "aws_s3_bucket" "tom_bucket" {
     name        = "Tom Bucket"
     environment = "Dev"
   }
+  
 }
+*/
