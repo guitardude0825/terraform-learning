@@ -52,5 +52,9 @@ resource "aws_s3_bucket" "tom_bucket" {
     name        = "Tom Bucket"
     environment = "Dev"
   }
-  
+}
+
+resource "aws_instance" "Terraform" {
+  ami           = "ami-0e9107ed11be76fde"
+  instance_type = "t2.micro"
 }
