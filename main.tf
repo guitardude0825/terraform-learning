@@ -60,7 +60,7 @@ resource "aws_instance" "Terraform" {
   vpc_security_group_ids = ["SSH-Home"]
   key_name               = "coyleteast"
   tags = {
-    name        = "TF Test"
+    name        = "TFTest"
     environment = "Dev"
   }
 }
