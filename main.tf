@@ -69,7 +69,8 @@ resource_group_name = azurerm_resource_group.rg.name
 virtual_network_name = azurerm_virtual_network.tc-vnet.name
 address_prefixes = ["10.0.1.0/24"]
 }
-
+/*
 output "ec2_public_ip" {
   value = aws_instance.Terraform.public_ip
 }
+*/
