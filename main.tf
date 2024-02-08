@@ -50,7 +50,7 @@ resource "aws_instance" "Terraform" {
     environment = "Dev"
   }
 }
-
+*/
 resource "azurerm_resource_group" "rg" {
   name     = "myTFResourceGroup"
   location = "eastus"
@@ -63,7 +63,13 @@ resource "azurerm_virtual_network" "tc-vnet" {
   address_space       = ["10.0.0.0/16"]
 }
 
+resource "azurerm_subnet" "tc-subnet-1" {
+name ="coyle-subnet1"
+resource_group_name = azurerm_resource_group.rg.name
+virtual_network_name = azurerm_virtual_network.tc-vnet.name
+address_prefixes = ["10.0.1.0/24"]
+}
+
 output "ec2_public_ip" {
   value = aws_instance.Terraform.public_ip
 }
-*/
